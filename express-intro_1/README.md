@@ -132,3 +132,68 @@ app.listen(port, () => {
 ```
 
 <br>
+
+### 7)
+
+<br>
+
+#### INSTALL nodemon :blossom:
+
+```javascript
+npm i nodemon --save-dev
+
+```
+
+<br>
+
+### 8)
+
+<br>
+
+#### NOW that nodemon is installed (check the dev dependencies and see if nodemon is there)
+
+<p>If its there go to the scripts like inside the package.json and change the following </p>
+
+```javascript
+ "scripts": {
+    "dev": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+
+  },
+
+  //for this:
+
+   "scripts": {
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+
+  },
+
+```
+
+<br>
+
+### 9)
+
+<br>
+
+#### Type nodemon app.js on the console and go to the browser and check the localhost:3000 to see the result , you can also see some movement in the console like so:
+
+```javascript
+[nodemon] 2.0.2
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching dir(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node app.js`
+Example app listening at http://localhost:3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node app.js`
+Example app listening at http://localhost:3000
+[nodemon] restarting due to changes...
+[nodemon] starting `node app.js`
+[nodemon] restarting due to changes...
+[nodemon] starting `node app.js`
+Example app listening at http://localhost:3000
+```
+
+<br>
