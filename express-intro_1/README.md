@@ -177,7 +177,7 @@ npm i nodemon --save-dev
 
 <br>
 
-#### Type nodemon app.js on the console and go to the browser and check the localhost:3000 to see the result , you can also see some movement in the console like so:
+#### Type nodemon app.js on the console and then go to the browser to check the localhost:3000 to see the result , you can also see some movement in the console like so:
 
 ```javascript
 [nodemon] 2.0.2
