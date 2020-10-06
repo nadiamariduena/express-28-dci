@@ -263,9 +263,8 @@ I can use reduce as well:
 
 </p>
 
-````javascript
+```javascript
 var mostExpPilot = pilots.reduce(function (oldest, pilot) {
-return (oldest.years || 0) > pilot.years ? oldest : pilot;
+  return (oldest.years || 0) > pilot.years ? oldest : pilot;
 }, {});
 ```
-````
