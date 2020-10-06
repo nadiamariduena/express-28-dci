@@ -2,7 +2,7 @@ const express = require("express");
 
 const app = express();
 const port = 3000;
-const { getAllUsers } = require("./userMethods");
+const { getAllUsers, getUser } = require("./userMethods");
 //
 //
 //
@@ -18,10 +18,12 @@ const sayHello = (req, res) => {
   res.send({ mess: "Welcome HELLO sssssSTEVEEE" });
 };
 
-// ***  ROUTES ***
+// ***  ROUTES ***   this is similar or a bit to the path in REACT
 app.get("/", sayHello);
 //GET:  If the user wants to make a request on all the users, you use GET
 app.get("/users", getAllUsers);
+//GET:  get specific info from a user with an specific ID
+app.get("/users/:id", getUser); //dont forget to add the get user in line 5 and duplicate the object in the userMethods.js
 
 /*
 
