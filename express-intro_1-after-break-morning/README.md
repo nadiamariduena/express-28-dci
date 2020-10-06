@@ -99,6 +99,7 @@ app.get("/users", getAllUsers);
 ## :bee: :bee: refreshing javascript to understand it a bit better :bee: :bee:
 
 <br>
+<a href="https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d"  target="_blank">Source </a>
 <br>
 
 ### .map()
