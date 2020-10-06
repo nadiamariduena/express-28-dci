@@ -115,7 +115,7 @@ npm i express
 
 <a href="https://expressjs.com/en/starter/hello-world.html" target="_blank"></a>
 
-### Copy the follwing for that page and paste it to the app.js(replace the console log for this new data)
+<p>Copy the follwing for that page and paste it to the app.js (replace the console log for this new data)</p>
 
 ```javascript
 const express = require("express");
