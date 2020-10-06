@@ -31,10 +31,53 @@ exports.getUser = (req, res) => {
   // We want to return the info of the user with the id
   const { id } = req.params;
   const user = users.filter((user) => user.id === id);
-  res.send(user);
+
   //   the below was before i added the filter
   //   res.send({ message: `We will return the info of user ${id}` });
+  //
+  // NOW what if the user types an nonexisting match/id?
+  // the following will show a message in case the user type a nonexisting ID
+  if (!user.length)
+    res.send({ err: `no such user id exist in our data base ${id}` });
+  // so if the user !user doesnt exist res.send an error
+  res.send(user);
 };
+/*
+
+
+
+
+  
+        if (!user) res.send({ err: `no such user id exist in our data base ${id}` });
+
+
+
+            When the teacher did the following above it didnt 
+            work and the result was an empty array, that was 
+            because the user was an empty array:
+
+
+                const user = users.filter((user) => user.id === id);
+
+  
+            So he asked: HOW CAN I CHECK IF THE ARRAY IS EMPTY?
+            the answer:
+
+            You can check the length or type user.name, so it should
+            look like this:
+
+            so if the user doesn't have a length, this is what this means:
+
+  if (!user.length)
+    res.send({ err: `no such user id exist in our data base ${id}` });
+
+
+ 
+  
+
+
+
+  */
 
 /*
 https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d
