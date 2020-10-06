@@ -9,7 +9,7 @@
 <p>I dont need to create a record store because this is just my lessons, but it serves
 for the record store purpose</p>
 
-### 1)\_
+### 1)
 
 ```javascript
 mkdir lc-record-store
@@ -33,9 +33,8 @@ npm init
 </ul>
 
 <br>
-<br>
 
-### 2)\_
+### 2)
 
 <br>
 
@@ -51,9 +50,8 @@ npm init
 ```
 
 <br>
-<br>
 
-### 3)\_
+### 3)
 
 <br>
 
@@ -66,9 +64,8 @@ console.log("I am a test bird");
 ```
 
 <br>
-<br>
 
-### 4)\_
+### 4)
 
 <br>
 
@@ -82,9 +79,8 @@ npm run dev
 <!-- by typing colons without typing enter, it will show you an array of emojis  -->
 
 <br>
-<br>
 
-### 4)\_
+### 4)
 
 <br>
 
@@ -98,9 +94,8 @@ hello i want to go to Kiwi land
 ```
 
 <br>
-<br>
 
-### 5)\_
+### 5)
 
 <br>
 
@@ -116,7 +111,7 @@ npm i express
 <br>
 <br>
 
-### 6)\_ Once you have installed express, go to the following link
+### 6) Once you have installed express, go to the following link
 
 <a href="https://expressjs.com/en/starter/hello-world.html" target="_blank"></a>
 
