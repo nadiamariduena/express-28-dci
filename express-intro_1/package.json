@@ -1,0 +1,15 @@
+{
+  "name": "express-intro_1",
+  "version": "1.0.0",
+  "description": "<br>",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nadia mariduena",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
