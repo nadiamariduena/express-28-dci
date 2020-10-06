@@ -1,6 +1,6 @@
 ## Database intro (sending requests)
 
-                              # First steps
+# First steps
 
 <br>
 
