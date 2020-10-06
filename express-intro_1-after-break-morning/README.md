@@ -91,8 +91,54 @@ app.get("/users", getAllUsers);
 <br>
 <br>
 
+<br>
+<br>
+
+### Condition in case the user don't exist
+
+<p>
+what if the user types an nonexisting match/id?
+the following way wasnt right:
+</p>
+
+```javascript
+if (!user) res.send({ err: `no such user id exist in our data base ${id}` });
+```
+
+<p>
+           When the teacher did the following above it didnt 
+            work and the result was an empty array, that was 
+            because the "user" has an empty array:
+</p>
+
+```javascript
+const user = users.filter((user) => user.id === id);
+```
+
+<p>
+        
+            So he asked: HOW CAN I CHECK IF THE ARRAY IS EMPTY?
+            the answer:
+
+            You can check the length or type user.name, so it should
+            look like this:
+
+            so if the user doesn't have a length, this is what this means:
+
+</p>
+
+```javascript
+if (!user.length)
+  res.send({ err: `no such user id exist in our data base ${id}` });
+```
+
+<br>
+<br>
+<br>
+
 <hr>
 
+<br>
 <br>
 <br>
 
