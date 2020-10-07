@@ -1,0 +1,20 @@
+{
+  "name": "express-assign-robert1",
+  "version": "1.0.0",
+  "description": "# First steps",
+  "main": "data.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "killnode": "lsof -ti :5000 | xargs kill "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
