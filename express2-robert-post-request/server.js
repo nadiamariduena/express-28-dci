@@ -94,6 +94,63 @@ app.get("/teachers/:id", (req, res) => {
 
 */
 
+// Post request ** NEW!! connected to the FORM inside the teacher_add.html
+
+app.get("/teachers/add", (req, res) => {
+  console.log("teacher form called ");
+  // you have res.json , res.send and res.sendFile
+  res.sendFile("./ui/teacher_add.html");
+  // res.sendFile  serves to send data
+});
+/*
+  
+
+
+
+
+
+                            How can i serve the user the call the add ROUTE? 
+                            
+                            Express has a special function call:
+                       **     you have res.json , res.send and res.sendFile
+ 
+                            With res.sendFile you dont have to import it on the Top and then requiring it,
+                            because res.sendFile is already grabbing the file from the folder, a bit like
+                            when you grab  the url img in scss.
+
+                            SO after you added the new ROUTE connected to the add html like so:
+
+                            app.get("/teachers/add", (req, res) => {
+
+                                  console.log("teacher form called ");
+                               
+                              res.sendFile("./ui/teacher_add.html");
+                            });
+
+
+
+                            TEST IT HERE:
+                            http://localhost:5000/teachers/add
+
+
+                            One of the reasons you dont have nothing on the browser is because there is an
+                            ERROR!!!! the error firstly come due to a conflict with another ROUTE in this file
+                            (line 52:     app.get("/teachers/:id") 
+                            
+                            the problem resides in the fact that **
+                            there are two Routes now using the GET method and what is happening is
+                            that EXPRESS is executing the first route with the GET it finds, when checking the 
+                            server.js file
+
+
+                            
+  
+  
+  */
+//
+//
+//
+//
 // Post request ** NEW!!
 
 app.post("/teachers", (req, res) => {
