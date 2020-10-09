@@ -1,15 +1,13 @@
 ## EXPRESS 2)\_ "POST REQUESTS"
 
-
 #### °°------- This project is a continuation of the "Teachers app" --------°°
 
-
 <br>
 <br>
 
-#### 1)_ 
+#### 1)\_
 
-##### \* ADD A NEW TEACHER and a route respectively,
+##### \* ADD A NEW TEACHER and a route respectively
 
 <p>                            this new route will have a POST request method.
 
@@ -95,7 +93,7 @@ app.get("/teachers/add", (req, res) => {});
 
                                   console.log("teacher form called ");
                                
-                              res.sendFile("./ui/teacher_add.html");
+                            res.sendFile("./ui/teacher_add.html");   // grabbing the form
                             });
 
 
@@ -104,9 +102,9 @@ app.get("/teachers/add", (req, res) => {});
                             http://localhost:5000/teachers/add
 
 
-                            One of the reasons you dont have nothing on the browser is because there is an
+                            One of the reasons you dont have anything(blank page) on the browser is because there is an
                             ERROR!!!! the error firstly come due to a conflict with another ROUTE in this file
-                            (line 52:     app.get("/teachers/:id") 
+                            (line 52:     app.get("/teachers/:id")  //check the server.js
                             
                             the problem resides in the fact that **
                             there are two Routes now using the GET method and what is happening is
