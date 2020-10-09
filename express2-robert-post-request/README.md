@@ -31,7 +31,7 @@ app.post("/teachers", (req, res) => {
 });
 ```
 
-#### 2 Create a new folder and a file
+#### 2)\_ Create a new folder and a file
 
 <p>                            create a Folder and Name it:
 
@@ -47,7 +47,7 @@ teacher_add.html
 
 </p>
 
-#### 3 ADD the form inside the: teacher_add.html file
+#### 3)\_ ADD the form inside the: teacher_add.html file
 
 ```javascript
   <h1>Add this Teacher</h1>
@@ -60,7 +60,7 @@ teacher_add.html
 
 ```
 
-#### 4 Go to the server and add a Route to connect with the form
+#### 4)\_ Go to the server and add a Route to connect with the form
 
 ```javascript
 app.get("/teachers/add", (req, res) => {});
