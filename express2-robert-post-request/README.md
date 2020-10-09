@@ -1,9 +1,10 @@
-## EXPRESS intro 2 POST REQUESTS
+## EXPRESS 2)\_ "POST REQUESTS"
 
 ### This project is a continuation of the "Teachers app"
 
 <br>
 <br>
+
 #### 1 ADD A NEW TEACHER
 
 ##### \* ADD A NEW TEACHER and a route respectively,
@@ -19,9 +20,14 @@ here:
 </p>
 
 ```javascript
-res.json({
-  name: "Hadi",
-  id: 9,
+// Post request ** NEW!!
+
+app.post("/teachers", (req, res) => {
+  console.log("Post teachers route called");
+  res.json({
+    name: "Hadi",
+    id: 9,
+  });
 });
 ```
 
