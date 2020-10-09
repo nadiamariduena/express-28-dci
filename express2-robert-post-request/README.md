@@ -112,6 +112,24 @@ app.get("/teachers/add", (req, res) => {});
                             server.js file
 
 
+                            To solve this problem you will have to relocate the ROUTE with the add
+                            ,above the Route with:  app.get("/teachers/:id" in line 52 like so:
+
+
+                           
+
+                                                app.get("/teachers/add", (req, res) => {
+                                             
+                                                });
+
+
+
+                                                //  Single Teacher
+
+                                                app.get("/teachers/:id", (req, res) => {
+                                                
+                                                });
+
                             
   
   
