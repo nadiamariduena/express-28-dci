@@ -265,7 +265,7 @@ app.post("/teachers", (req, res) => {
 <br>
 <br>
 
-![rested gif](/img/rested-anim.gif)
+![rested gif](/img/rested-anim22.gif)
 
 <br>
 <br>
