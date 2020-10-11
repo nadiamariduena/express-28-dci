@@ -155,6 +155,120 @@ res.sendFile(__dirname + "/ui/teacher_add.html");
 
 <br>
 <br>
+
+### :balloon: IMPORTANT !!
+
+##### POST REQUEST with FETCH
+
+###### in the world of API's when you receive a REQUEST you have to always STATE what is inside of it , otherwise the API will refuse the packet
+
+```javascript
+
+        let teacherName = form.name.value;
+        //
+        //
+        //
+        //  ****  POST call to backend   ****
+        // POST REQUEST with FETCH
+        //
+        fetch("http://localhost:5000/teachers", {
+          method: "POST", //1
+          //In the header you have to state what is inside, type for example
+          headers: {
+            //2
+            // the type is JSON, Json refers to the body of what is inside of the parcel
+            "Content-type": "application/json",
+            // 3 the last is the DATA itself
+            // here you will send the data, but you have to declare this data before the FETCH in a variable:       let teacherName = form.name.value;
+          },
+
+          /********
+             method: "POST"
+
+
+          in the world of API's when you receive a REQUEST you have
+          to always STATE what is inside of it , otherwise the API
+          will refuse the packet
+
+          *******/
+          /*  the 400 error bad request after you added this in the
+
+        server.js : app.use(express.json());
+
+         is corrected with stringify, the problem is due that the browser
+         dont recognize that kind of data because the browser
+          only recognize strings therefore you need to convert or
+          stringify the data you send out there
+          */
+
+          body: JSON.stringify({ name: teacherName }),
+          //before the stringfy body: { name: teacherName },
+
+          /*
+ body: JSON.stringify({ name: teacherName }),
+
+Json data we want to send to a backend always needs to be send
+as a STRING over the wire , the backend will parse that string
+ into an javascript object
+
+
+
+*/
+
+
+// server.js
+
+
+// MIDDLEWARE
+/*
+
+with the following you ask express
+if there is any JSON data in the body ,and if
+so please store it in => req.body
+
+app.use(express.json());
+
+So it takes the incoming body STRING, parses the JSON inside
+and stores the data in => req.body
+
+
+*/
+//
+app.use(express.json());
+//
+
+app.post("/teachers", (req, res) => {
+  console.log("Post teachers route called");
+  console.log(req.body);
+  //this is the data that the frontend SENT to us
+
+  res.json({
+    name: "Hadi",
+    id: 9,
+  });
+});
+
+```
+
+<br>
+<br>
+
+#### :balloon: ADD the RESTED extension to test the backend
+
+![rested](/img/rested_preview.jpg)
+
+<br>
+<br>
+
+<p>Select the method you want: POST , GET etc then type the type of content in the Headers, then select the type, add the name and then the name of one of the teachers in the list of teachers, click send request</p>
+
+<br>
+<br>
+
+![rested](/img/rested-anim.gif)
+
+<br>
+<br>
 <br>
 
 ## °°------- installation | dependencies --------°°

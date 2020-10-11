@@ -43,6 +43,22 @@ const express = require("express");
 const app = express();
 const port = 5000;
 
+// MIDDLEWARE
+/* with the following you ask express  
+if there is any JSON data in the body ,and if 
+so please store it in => req.body
+
+app.use(express.json());
+
+So it takes the incoming body STRING, parses the JSON inside
+and stores the data in => req.body
+
+
+*/
+//
+app.use(express.json());
+//
+
 app.listen(port, () => {
   console.log(`Started server on port ${port}`);
 });
@@ -183,6 +199,8 @@ app.get("/teachers/:id", (req, res) => {
 
 app.post("/teachers", (req, res) => {
   console.log("Post teachers route called");
+  console.log(req.body); //this is the data that the frontend SENT to us
+
   res.json({
     name: "Hadi",
     id: 9,

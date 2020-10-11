@@ -19,19 +19,76 @@
 -->
 
     <script>
-      const onSubmit = (e) => {
+      // defining form (e, form) if you dont add the form as 2 argument, a problem is going to show due to this: form.name.value);
+      // You will see the error once you type Martina for example, check the console and if nothings shows type the same name again
+      //also check that you have this on the form : input name="name" , otherwise the same you type wont show as it goes with this: form.name.value);
+      // original:   const onSubmit = (e) => {
+      const onSubmit = (e, form) => {
         console.log("Submit handler called");
 
         e.preventDefault();
+        console.log("Teacher name to send:", form.name.value);
+
+        let teacherName = form.name.value;
+        //
+        //
+        //
+        //  ****  POST call to backend   ****
+        // POST REQUEST with FETCH
+        //
+        fetch("http://localhost:5000/teachers", {
+          method: "POST", //1
+          //In the header you have to state what is inside, type for example
+          headers: {
+            //2
+            // the type is JSON, Json refers to the body of what is inside of the parcel
+            "Content-type": "application/json",
+            // 3 the last is the DATA itself
+            // here you will send the data, but you have to declare this data before the FETCH in a variable:       let teacherName = form.name.value;
+          },
+
+          /********
+             method: "POST"
+
+
+          in the world of API's when you receive a REQUEST you have
+          to always STATE what is inside of it , otherwise the API
+          will refuse the packet
+
+          *******/
+          /*  the 400 error bad request after you added this in the 
+
+        server.js : app.use(express.json());
+
+         is corrected with stringify, the problem is due that the browser 
+         dont recognize that kind of data because the browser 
+          only recognize strings therefore you need to convert or 
+          stringify the data you send out there
+          */
+
+          body: JSON.stringify({ name: teacherName }),
+          //before the stringfy body: { name: teacherName },
+
+          /*
+ body: JSON.stringify({ name: teacherName }),
+ 
+Json data we want to send to a backend always needs to be send
+as a STRING over the wire , the backend will parse that string
+ into an javascript object
+
+
+
+*/
+        });
       };
     </script>
 
     <h1>Add this Teacher</h1>
-    <form onsubmit="onSubmit(event)">
-      <div><label for="">Name</label><input type="text" /></div>
+    <form onsubmit="onSubmit(event, this)">
+      <div><label for="">Name</label><input name="name" type="text" /></div>
       <button>Add</button>
     </form>
 
-    <!-- shortcut:    form>div*2>label+input                -->
+    <!-- shortcut:    form>div*2>label+input        -->
   </body>
 </html>
