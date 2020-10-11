@@ -265,7 +265,9 @@ app.post("/teachers", (req, res) => {
 <br>
 <br>
 
-![rested gif](/img/rested-anim22.gif)
+<!-- ![rested gif](/img/rested-anim22.gif) -->
+
+[<img src="img/rested-anim22.gif">](https://www.youtube.com/watch?v=blQ60skPzl0&index=2)
 
 <br>
 <br>
