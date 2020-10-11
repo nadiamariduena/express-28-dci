@@ -74,8 +74,9 @@ app.get("/teachers", (req, res) => {
 app.get("/teachers/add", (req, res) => {
   console.log("teacher form called ");
   // you have res.json , res.send and res.sendFile
-  res.sendFile("./ui/teacher_add.html");
+  res.sendFile(__dirname + "/ui/teacher_add.html");
   // res.sendFile  serves to send data
+  // res.sendFile("./ui/teacher_add.html");  this was before the changes
 });
 // ----------------------------------------------
 

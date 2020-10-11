@@ -18,8 +18,16 @@
 
 -->
 
+    <script>
+      const onSubmit = (e) => {
+        console.log("Submit handler called");
+
+        e.preventDefault();
+      };
+    </script>
+
     <h1>Add this Teacher</h1>
-    <form action="">
+    <form onsubmit="onSubmit(event)">
       <div><label for="">Name</label><input type="text" /></div>
       <button>Add</button>
     </form>

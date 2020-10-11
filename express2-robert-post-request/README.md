@@ -132,8 +132,25 @@ app.get("/teachers/add", (req, res) => {});
 
                             
   
-  
+
+                            After i relocated the route there will be another problem, this time the
+                            error will say:
+
+                            TypeError: path must be absolute or specify root to res.sendFile
+
+                            to give an absolute path (point to your project route )
+                            you will use the following:
+
+                            __dirname YOU have to delete the dot here: ("./ui/teacher_add.html");
+
+                            the problem with the dot is that res.sendFile requires an absolute path
+
+                          and the dot dont work with res.sendFile thats why you hate to use the __dirname
   */
+
+res.sendFile(__dirname + "/ui/teacher_add.html");
+// res.sendFile  serves to send data
+// res.sendFile("./ui/teacher_add.html");  this was before the changes
 ```
 
 <br>
