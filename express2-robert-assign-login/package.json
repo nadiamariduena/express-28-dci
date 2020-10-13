@@ -1,0 +1,21 @@
+{
+  "name": "express2-robert-assign-login",
+  "version": "1.0.0",
+  "description": "#### °°------- This project is a continuation of the \"Teachers app\" --------°°",
+  "main": "data.js",
+  "scripts": {
+    "dev": "nodemon -e js server.js",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "killnode": "lsof -ti :5000 | xargs kill "
+  },
+  "author": "nadia",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "lowdb": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

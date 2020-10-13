@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <!-- 
+
+
+
+
+
+
+   -->
+  <script>
+    const login = (e, form) => {
+      e.preventDefault(); //to stop the mess when handling forms
+
+      console.log("submit");
+      let username = form.username.value;
+      let password = form.password.value;
+
+      console.log(username);
+      console.log(password);
+      //
+      //  ****  POST call to backend   ****
+      // POST REQUEST with FETCH
+      /* 
+          method: "POST"
+
+
+                    in the world of API's when you receive a REQUEST you have
+                    to always STATE what is inside of it , otherwise the API
+                    will refuse the packet
+    
+    */
+      //
+      fetch("http://localhost:5000/login", {
+        method: "POST", //1
+        //In the header you have to state what is inside, type for example
+        headers: {
+          //2
+          // the type is JSON, Json refers to the body of what is inside of the parcel
+          "Content-Type": "application/json",
+          // 3 the last is the DATA itself
+          /* here you will send the data, but you have to declare
+              this data before the FETCH in a variable:
+
+                        let username = form.username.value;
+                        let password = form.password.value;
+
+               */
+        },
+        body: JSON.stringify({ username: username, password: password }),
+      }).then((res) => res.json().then((data) => console.log(data)));
+
+      //   FORGOT "THEN"
+
+      // .then((res) => res.json().then((data) => console.log(data)));
+
+      /*
+                the 400 error RELATED
+
+       server.js : app.use(express.json());
+
+         is corrected with stringify, the problem is due that the browser
+         don't recognize that kind of data because the browser
+          only recognize strings, therefore you need to convert or
+          stringify the data you send out there.
+
+
+
+
+*/
+    };
+  </script>
+
+  <!-- 
+
+
+
+
+
+    
+   -->
+  <body>
+    <!--
+
+                                FORM
+
+
+
+       -->
+    <h1>Login</h1>
+    <form onsubmit="login(event, this)">
+      <label> UserName </label>
+      <input type="text" name="username" />
+      <label> Password </label>
+      <input type="text" name="password" />
+      <button>login</button>
+    </form>
+  </body>
+</html>
