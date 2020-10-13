@@ -64,6 +64,7 @@ app.get("/", (req, res) => {
 
 app.get("/login", (req, res) => {
   res.sendFile(__dirname + "/client/login.html");
+  // __dirname YOU have to delete the dot here , if you use this __dirname: ("./ui/teacher_add.html");
 });
 
 app.post("/login", (req, res) => {

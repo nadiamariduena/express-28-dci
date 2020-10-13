@@ -2,12 +2,45 @@
 
 #### °°------- ASSIGNMENT | Login using requests--------°°
 
-##### this project was created by Vasilis and i will copy it here to have an example of the login.
+##### this project was created by Vasilis and i will copy it here to have an example of the login(he didnt add comments on most of the stuff but i am thankful that he could give us a preview of it :baby_chick: ).
 
+<br>
+
+
+![rested](img/prev1.jpg)
+
+
+<br>
+
+### TO PREVENT
+
+##### When you just install low db and express, you will notice that when you want to start the server, there s an endless loop, to prevent this:
+
+<p>Go to the package json and replace the following </p>
+
+```javascript
+
+// before
+"dev": "nodemon  server.js",
+// after
+  "dev": "nodemon -e js server.js",
+```
+
+##### after replacing that type:
+
+```javascript
+npm run dev
+
+// You will notice that a file db.json will be automatically created.
+```
+
+<br>
+
+<hr>
 <br>
 <br>
 
-##### I commented what i understood, but most of the LOW DB was confusing, i think having 2 different ways of doing something in the same day is contre productive.
+#### I commented what i understood, but most of the LOW DB was confusing, i think having 2 different ways of doing something in the same day is contre productive.
 
 ```javascript
 const login = (e, form) => {
@@ -71,34 +104,3 @@ const login = (e, form) => {
 */
 };
 ```
-
-<br>
-<br>
-<br>
-
-### TO PREVENT
-
-##### When you just install low db and express, you will notice that when you want to start the server, there s an endless loop, to prevent this:
-
-<p>Go to the package json and replace the following </p>
-
-```javascript
-
-// before
-"dev": "nodemon  server.js",
-// after
-  "dev": "nodemon -e js server.js",
-```
-
-##### after replacing that type:
-
-```javascript
-npm run dev
-
-// You will notice that a file db.json will be automatically created.
-```
-
-<br>
-
-<br>
-<hr>
