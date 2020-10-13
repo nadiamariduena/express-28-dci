@@ -2,13 +2,11 @@
 
 #### °°------- ASSIGNMENT | Login using requests--------°°
 
-##### this project was created by Vasilis and i will copy it here to have an example of the login(he didnt add comments on most of the stuff but i am thankful that he could give us a preview of it :baby_chick: ).
+##### this project was created by Vasilis and i will paste it here to have an example of the login(he didnt add comments on most of the stuff but i am thankful that he could give us a preview of it :baby_chick: ).
 
 <br>
 
-
 ![rested](img/prev1.jpg)
-
 
 <br>
 
@@ -32,6 +30,32 @@
 npm run dev
 
 // You will notice that a file db.json will be automatically created.
+
+
+/*  MORE ABOUT :
+
+this db.defaults is only executed when the file doesn't exist,
+ but if you added data
+ inside the square brackets like the teachers names for
+  example, you will
+ have to delete the data/db.json as you now have data here.
+
+
+
+db.defaults({
+  users: [
+    {
+            id: "01",
+        name: "hello",
+      email: blah@gmail.com
+}
+  ],
+}).write();
+
+
+
+
+ */
 ```
 
 <br>
