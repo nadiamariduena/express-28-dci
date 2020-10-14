@@ -72,6 +72,24 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("<h1>Assignement fruits</h1>");
 });
+
+/*
+
+                 Setup POST, PATCH, DELETE routes for changing fruits
+
+                    //POST : create
+                    //Get  : read
+                    //Put  : Update/Replace
+                    // Patch : Update/Modify
+                    // Delete : Delete
+
+                   -  PATCH route: Allow updating of a single field (name / color) or both fields in one call!
+
+                   - Setup body parsing (app.use( express.json() ))
+                        only that way someone can send data (= a body) to our API...
+
+
+*/
 ```
 
 <br>
@@ -124,6 +142,19 @@ app.post("/signupnewfruit", (req, res) => {
   // with the following : Date.now
   newFruit.id = Date.now().toString();
 
+  /*
+
+                        Using Date.now
+                        Date.now is another JavaScript built-in function which allows us to get the number of miliseconds elapsed since January 1, 1970.
+                                        Date.now()
+                                        Result:
+                                        1576996323453
+
+
+  https://dev.to/rahmanfadhil/how-to-generate-unique-id-in-javascript-1b13
+  
+  
+  */
   //   with "push" you add an item
   magicalfruits.push(newFruit);
   res.json(newFruit);
@@ -159,6 +190,23 @@ app.post("/loginnewfruit", (req, res) => {
     res.json({ message: "fruits unsuccessful" });
   }
 });
+
+/*
+
+IF i want to "log in" a fruit that already exist in the list  for example
+with: name: mango , color: yellow.
+
+you will notice that it will show an error like "provide name and color"
+even if everything is fine, the problem comes from the way you fill the fields
+inside the RESTED in the browser, YOU have to specify the Content-Type : application/json
+otherwise it wont work, after you specify it you will see the :
+
+{
+  "message": "fruits successfully"
+}
+
+
+*/
 ```
 
 <br>
