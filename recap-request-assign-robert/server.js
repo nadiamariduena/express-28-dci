@@ -104,7 +104,7 @@ app.post("/loginnewfruit", (req, res) => {
   if (!fruitFound) {
     res.json({ message: "fruits  succesfull" });
   } else {
-    res.json({ message: "fruits successfully" });
+    res.json({ message: "fruits unsuccessful" });
   }
 });
 // MORE ERRORS
@@ -133,6 +133,27 @@ otherwise it wont work, after you specify it you will see the :
 // the sign up a new fruit
 app.post("/signupnewfruit", (req, res) => {
   let newFruit = req.body;
+  // with the following : Date.now
+  newFruit.id = Date.now().toString();
+
+  /*
+  How to Generate Unique ID in JavaScript
+  Using Math.random
+Math.floor(Math.random() * 100)
+
+or
+
+Using Date.now
+Date.now is another JavaScript built-in function which allows us to get the number of miliseconds elapsed since January 1, 1970.
+Date.now()
+Result:
+1576996323453
+
+
+  https://dev.to/rahmanfadhil/how-to-generate-unique-id-in-javascript-1b13
+  
+  
+  */
   //   with push you add
   magicalfruits.push(newFruit);
   res.json(newFruit);
@@ -182,8 +203,7 @@ app.patch("/magicalfruits/:id", (req, res) => {
     res.send(fruitFound);
   } else {
     res.json({
-      message:
-        "What do you think we are here? Please provide someone we know!!!",
+      message: "provide the required info!!!",
     });
   }
 });
