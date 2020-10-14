@@ -81,9 +81,17 @@ app.get("/", (req, res) => {
 <br>
 
 ```javascript
-app.get("/", (req, res) => {
-  res.send("<h1>Assignement fruits</h1>");
+app.get("/magicalfruits", (req, res) => {
+  res.json(magicalfruits);
 });
+
+/*
+
+// check what you have in your list, also the new inserted fruits through /signupnewfruit  :
+
+// http://localhost:5000/magicalfruits
+
+*/
 ```
 
 <br>
