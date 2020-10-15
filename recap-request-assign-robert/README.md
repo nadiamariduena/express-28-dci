@@ -57,6 +57,8 @@ let magicalfruits = [
 ```javascript
 // linked to the 500 error
 app.use(express.json());
+// parse incoming bodies... after parsing we can access  the data in req.body everywhere
+//
 // HIDE THIS WHEN YOU WILL START WITH THE POST STUFFand then uncover it again when you will send the request
 // i am still figuring it out when uncover and when not to uncover this
 
