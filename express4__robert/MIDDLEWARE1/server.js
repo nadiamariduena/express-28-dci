@@ -3,26 +3,20 @@ const app = express();
 //
 //
 //
-//
+//MIDDLEWARE *******************
 app.use((req, res, next) => {
   console.log("CALLING A ROUTE using next");
   next();
 });
 
 /*
-app.use("/")
-Tipically when you define routes you start with this: use("/")
-but in this new way you dont need it, you can start directly with
-the ROUTE handlers (req, res)
-
-app.use((req, res) => {
-  console.log("CALLING A ROUTE");
-});
-
-But what is going to make the difference with
-this new way is the use of: next() , next() is going to grab all 
-the routes at the same time and therefore EXECUTE it in all of
-them, test in the localhost then in the rested/POST 
+ The Middleware will INTERCEPT and check
+  if the data send is 
+ correct, and only if it s correct it will FORWARD
+ the user to the ROUTE, example:
+ LOGIN situation , if the user dont give a correct
+ answer, the middleware is not going to redirect the user
+ to the route of the welcome user (your fb perso profile )
 
 */
 

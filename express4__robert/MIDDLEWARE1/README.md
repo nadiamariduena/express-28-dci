@@ -142,3 +142,15 @@ app.use((req, res, next) => {
 
 <br>
 <br>
+
+## MIDDLEWARE | what is it?
+
+<p>
+The Middleware will INTERCEPT and check
+  if the data send is 
+ correct, and only if it s correct it will FORWARD
+ the user to the ROUTE, example:
+ LOGIN for example , if the user dont give a correct
+ answer, the middleware is not going to direct the user
+ to the route of the welcome user blah(your fb perso profile )
+</p>
