@@ -14,7 +14,7 @@ START BY hiding the following: next(); to provoke an error </p>
 //MIDDLEWARE *******************
 app.use((req, res, next) => {
   console.log(`We called a route ${req.url}`);
-  // next();
+  next();
 });
 ```
 
@@ -30,6 +30,41 @@ make the connection. </p>
 
 ![rested](img/waiting.png)
 <br>
+<br>
+
+###### CALLING MULTIPLE MIDDLEWARES
+
+<p>Check the results in the same way.
+  Go to the browser and refresh the localhost:5000/get , this time dont go to post as in this example its only for the GET, unless you want to create an other MIDDLEWARE for POST</p>
+<br>
+
+```javascript
+/* original, before the generic and specific
+
+app.use((req, res, next) => {
+  console.log(`We called a route ${req.url}`);
+  // next();
+});
+
+
+*/
+
+//MIDDLEWARE ******* GENERIC
+app.use((req, res, next) => {
+  console.log(`We called a route ${req.url}`);
+  next();
+});
+//
+// BOTH ARE GOING TO BE called
+//
+//MIDDLEWARE ******* ROUTE  SPECIFIC
+app.use("/get", (req, res, next) => {
+  console.log(`SPECIFIC ROUTE EXAMPLE, get`);
+  next();
+});
+```
+
+<hr>
 <br>
 <br>
 
