@@ -1,5 +1,20 @@
 ###### MIDDLEWARE
 
+_sending requests with POSTMAN_
+
+- Post method
+
+https://expressjs.com/en/guide/writing-middleware.html - source!
+[Express](https://expressjs.com/en/guide/writing-middleware.html)
+
+- Login
+![image2](./img/middleware-explanatoryimg.jpg)
+
+  <br>
+<br>
+<br>
+<br>
+
 ##### 1)\_\_ First steps | INSTALL DEPENDENCIES
 
 ```javascript
@@ -140,6 +155,7 @@ app.use((req, res, next) => {
 
 ![rested](img/callingnext_.jpg)
 
+<p>Here you can see the message twice, and thats is because its grabing the GET and the POST at the same time<p>
 <br>
 <br>
 
