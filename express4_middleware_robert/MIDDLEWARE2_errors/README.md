@@ -28,7 +28,7 @@ make the connection. </p>
 
 <br>
 
-![rested](img/waiting.png)
+![rested](img/waiting2.jpg)
 <br>
 <br>
 
