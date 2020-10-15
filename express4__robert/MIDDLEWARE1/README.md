@@ -170,3 +170,78 @@ The Middleware will INTERCEPT and check
  answer, the middleware is not going to direct the user
  to the route of the welcome user blah(your fb perso profile )
 </p>
+
+##### 5)\_\_ Check what Route is being called
+
+<p>
+Since the MIDDLEWARE sends a general message when grabbing all the ROUTES,
+there s a way to identify which route 
+is being called.
+
+<br>
+<br>
+Start by adding the respective path method
+to each of the routes you have like so:
+</p>
+
+```javascript
+app.get("/get", (req, res) => {
+// GET
+
+app.post("/post", (req, res) => {
+// POST
+```
+
+###### IT SHOULD LOOK LIKE THIS:
+
+```javascript
+app.get("/get", (req, res) => {
+  res.json({
+    message: "Hello World! Get",
+  });
+});
+
+app.post("/post", (req, res) => {
+  res.json({
+    message: "Hello World! POST",
+  });
+});
+```
+
+###### NOW add the following
+
+```javascript
+console.log(`We called a route ${req.url}`);
+
+/*
+
+-- you have to add this: ${req.url}  
+
+-- then
+  check the localhost:5000/get (just refresh the browser ) and the "rested" on "POST" http://localhost:5000/post  (click on send)
+  the result will be:
+                                We called a route /post
+                                We called a route /get
+
+                                WITHOUT THIS   ${req.url}
+                                you will not be able to have that result.
+  */
+```
+
+###### IT SHOULD LOOK LIKE THIS:
+
+```javascript
+app.use((req, res, next) => {
+  console.log(`We called a route ${req.url}`);
+
+  next();
+});
+```
+
+<br>
+<br>
+
+![rested](img/req_url.jpg)
+
+<br>
+<br>

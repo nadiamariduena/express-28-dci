@@ -5,29 +5,27 @@ const app = express();
 //
 //MIDDLEWARE *******************
 app.use((req, res, next) => {
-  console.log("CALLING A ROUTE using next");
+  console.log(`We called a route ${req.url}`);
+  /*you have to add this: ${req.url}  ,to  then
+  check the localhost:5000/get and the "rested" on "POST" http://localhost:5000/post
+  the result will be:
+                                We called a route /post
+                                We called a route /get
+
+                                WITHOUT THIS   ${req.url}
+                                you will not be able to have that result.
+  */
   next();
 });
 
-/*
- The Middleware will INTERCEPT and check
-  if the data send is 
- correct, and only if it s correct it will FORWARD
- the user to the ROUTE, example:
- LOGIN situation , if the user dont give a correct
- answer, the middleware is not going to redirect the user
- to the route of the welcome user (your fb perso profile )
-
-*/
-
 // ------------------
-app.get("/", (req, res) => {
+app.get("/get", (req, res) => {
   res.json({
-    message: "Hello World!",
+    message: "Hello World! Get",
   });
 });
 
-app.post("/", (req, res) => {
+app.post("/post", (req, res) => {
   res.json({
     message: "Hello World! POST",
   });
