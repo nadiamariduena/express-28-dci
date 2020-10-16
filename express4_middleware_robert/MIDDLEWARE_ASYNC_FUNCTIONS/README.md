@@ -1,4 +1,4 @@
-###### CALLING MULTIPLE MIDDLEWARES | 2 example
+###### CALLING MULTIPLE MIDDLEWARES | MIDDLECHAINNING | 2 example
 
 <br>
 
@@ -73,8 +73,6 @@ app.post("/post", (req, res) => {
 ![rested](img/) -->
 <br>
 <br>
-
-###### CALLING MULTIPLE MIDDLEWARES
 
 <p></p>
 <br>
