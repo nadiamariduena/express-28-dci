@@ -16,17 +16,26 @@ app.use((req, res, next) => {
 
 //----------------  ROUTE  *  SPECIFIC --------
 //
-const getMiddleWare = (req, res, next) => {
-  //2
-  console.log(`Hello GET, in process to reach destination`);
-  next(); //next will help you to reach the destination
+const getMiddleWareUser = (req, res, next) => {
+  //1
+  console.log(`Hello GET, in process to reach destination, i am user`);
+  next(); //if all is fine  next() will allow me to check the ticket
 };
-app.get("/get", getMiddleWare, (req, res) => {
-  res.json({
-    message:
-      "Hello GET, finally AFTER checking process to reach dest..I reached the destination",
+
+const getMiddleWareTicket = (req, res, next) => {
+  //2
+  console.log(`Hello GET, in process to reach destination, i am ticket`);
+  next(); //if all is fine  next() will allow me to reach destination and watch the movie
+};
+
+// ***********************************************
+
+app.get("/get", getMiddleWareUser, getMiddleWareTicket, (req, res) => {
+  res.json({//3
+    message: "I reached the destination, i can watch the movie now",
   });
 });
+// app.get("/get", getMiddleWareUser, getMiddleWareTicket, (req, res) => {  in this line you can add as many middlewares you want
 // ------------------
 
 app.post("/post", (req, res) => {

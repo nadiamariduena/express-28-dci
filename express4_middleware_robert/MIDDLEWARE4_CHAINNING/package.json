@@ -1,0 +1,21 @@
+{
+  "name": "MIDDLEWARE4_CHAINNING",
+  "version": "1.0.0",
+  "description": "<br>",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "killnode": "lsof -ti :5000 | xargs kill "
+  },
+  "keywords": [],
+  "author": "nadia mariduena",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
