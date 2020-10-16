@@ -12,7 +12,7 @@ app.use((req, res, next) => {
 
 
 */
-//MIDDLEWARE ******* GENERIC
+//MIDDLEWARE ******* GENERIque
 app.use((req, res, next) => {
   console.log(`We called a route ${req.url}`);
   next();
