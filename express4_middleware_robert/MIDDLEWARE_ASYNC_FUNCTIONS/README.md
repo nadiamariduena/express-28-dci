@@ -53,7 +53,7 @@ app.post("/post", (req, res) => {
 
 - 2\_ Type the following in the browser: http://localhost:5000/get
 
-<p>By doing this you will see in the VS console that a message like this will be shown: "Hello GET, in process to reach destination" but if you look at the browser you ALREADY have reached the last message which is: "Hello GET, finally AFTER checking process to reach dest..I reached the destination" , this represents the GENERIC MIDDLEWARE</p>
+<p>By doing this you will see in the VS console that a message like this will be shown: "Hello GET, in process to reach destination" but if you look at the browser you ALREADY have reached the last message which is: "Hello GET, finally AFTER checking process to reach dest..I reached the destination" , this represents one of the SPECIFIC MIDDLEWARE</p>
 
 ##### 3\_ Then the post message which is not so important in this example as the generic can take care of this too, but if you want to have suplementary rules for each middleware you can also add it as well.
 
