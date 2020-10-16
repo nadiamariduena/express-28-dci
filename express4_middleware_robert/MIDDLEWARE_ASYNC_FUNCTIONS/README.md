@@ -2,6 +2,11 @@
 
 <br>
 
+![rested](img/preview-chainning.png)
+<br>
+
+<br>
+
 ```javascript
 //----------------  MIDDLEWARE * GENERIC  --------
 //
@@ -61,6 +66,9 @@ app.post("/post", (req, res) => {
 
 <br>
 <br>
+
+![rested](img/destination.png)
+
 <br>
 <br>
 
@@ -68,10 +76,6 @@ app.post("/post", (req, res) => {
 
 <p></p>
 
-<br>
-<!-- 
-![rested](img/) -->
-<br>
 <br>
 
 <p></p>
