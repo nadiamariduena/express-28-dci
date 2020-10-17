@@ -27,8 +27,6 @@ app.use(morgan("dev"));
 <br>
 
 ```javascript
-//
-//
 //----------------  MIDDLEWARE * GENERIC  --------
 // WHEN YOU ARE GOING TO START USING MORGAN you hide the generic
 // //
@@ -36,15 +34,19 @@ app.use(morgan("dev"));
 //   console.log(`We called a route ${req.url}`);
 //   next();
 // });
-//_______________________________________________
-//_______________________________________________
-//
-//
-//The request body should only be parsed as JSON if the Content-Type header begins with application/json. Since we want to do this for every request, the easiest solution is to use an application before middleware.
+
+/*
+
+The request body should only be parsed as JSON
+ if the Content-Type header begins with 
+ application/json. Since we want to do 
+ this for every request, the easiest solution is 
+ to use an application before middleware.
+*/
 
 app.use(express.json()); //JSON body parser middleware
-//
-//
+
+//                    *********
 app.use(morgan("dev")); //setup morgan request logger middleware
 // https://www.npmjs.com/package/morgan
 
