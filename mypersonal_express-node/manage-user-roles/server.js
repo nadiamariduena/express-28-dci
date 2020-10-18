@@ -17,14 +17,19 @@ app.use(setUser);
 app.use("/projects", projectRouter);
 //
 //
-//  the router for the homepage
+//  the router for the homepage /GENERIC
 app.get("/", (req, res) => {
   res.send("Home Page");
 });
+// 
+// ROUTE SPECIFIC
 // the Dashboard page where the "logged in" user can go
 app.get("/dashboard", (req, res) => {
   res.send("Dashboard Page");
 });
+// 
+// 
+// ROUTE SPECIFIC
 // an ADMIN page for admins only
 app.get("/admin", (req, res) => {
   res.send("Admin Page");
