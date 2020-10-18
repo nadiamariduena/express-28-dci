@@ -1,7 +1,10 @@
+// THIS ARE ALL THE PERMISSION ROLES -----
 const ROLE = {
   ADMIN: "admin",
   BASIC: "basic",
 };
+// ---------------------------------------#
+// if you notice each name has an specific ROLE 
 
 module.exports = {
   ROLE: ROLE,
